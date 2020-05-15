@@ -4,11 +4,11 @@ USE IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 ENTITY TrafficSigKL IS
 GENERIC (size : INTEGER := 127);
-	PORT (	clk, reset	: IN STD_LOGIC;	-- Clock, Reset
-		timer_en	: IN STD_LOGIC;	-- Timer enable
+	PORT (	clk, reset	: IN STD_LOGIC;		-- Clock, Reset
+		timer_en	: IN STD_LOGIC;		-- Timer enable
 		outclk	 	: INOUT STD_LOGIC;	-- User clock
-		timer_ew 	: INOUT INTEGER RANGE 0 TO size;		-- Timer for East-West signal
-		timer_ns 	: INOUT INTEGER RANGE 0 TO size;		-- Timer for North-South signal
+		timer_ew 	: INOUT INTEGER RANGE 0 TO size;	-- Timer for East-West signal
+		timer_ns 	: INOUT INTEGER RANGE 0 TO size;	-- Timer for North-South signal
 		s_out		: INOUT STD_LOGIC_VECTOR(1 DOWNTO 0); 	-- Status
 		ns_klim, ew_klim : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);	-- Traffic signal
 		seg5, seg4	: OUT STD_LOGIC_VECTOR(0 TO 6);	-- Seven segment for s status
@@ -21,8 +21,8 @@ END TrafficSigKL;
 ARCHITECTURE bhv0 OF TrafficSigKL IS
 
 	CONSTANT prd		: INTEGER := 24999999;	-- Control user clock pulses (user clock = system clock * (1/(prd+1))
-	CONSTANT y_light	: INTEGER := 3; 		-- Control Yellow time (3 pulses)
-	CONSTANT r_light	: INTEGER := 10;		-- Control Green + Yellow time (Green is 7 pulses)
+	CONSTANT y_light	: INTEGER := 3;		-- Control Yellow time (3 pulses)
+	CONSTANT r_light	: INTEGER := 10;	-- Control Green + Yellow time (Green is 7 pulses)
 	
 	SIGNAL temp	: STD_LOGIC := '0';
 	SIGNAL count	: INTEGER := 0;
@@ -131,7 +131,7 @@ BEGIN
 	s_out	<= s;
 	
 	
-	u1 : seven_seg1 PORT MAP(s_out, seg5, seg4); 	-- Seven segment output for s
+	u1 : seven_seg1 PORT MAP(s_out, seg5, seg4);			  -- Seven segment output for s
 	u2 : seven_seg2 GENERIC MAP(size) PORT MAP(timer_ew, seg3, seg2); -- Seven segment output for timer
 	u3 : seven_seg2 GENERIC MAP(size) PORT MAP(timer_ns, seg1, seg0); -- Seven segment output for timer
 	
@@ -157,15 +157,15 @@ BEGIN
 	BEGIN
 		CASE s IS
 			WHEN "00" => seg1 <= "0100100"; --s
-							 seg2 <= "0000001";  --0
+					seg2 <= "0000001";  --0
 			WHEN "01" => seg1 <= "0100100"; --s
-							 seg2 <= "1001111";  --1
+					seg2 <= "1001111";  --1
 			WHEN "10" => seg1 <= "0100100"; --s
-							 seg2 <= "0010010";  --2
+					seg2 <= "0010010";  --2
 			WHEN "11" => seg1 <= "0100100"; --s
-							 seg2 <= "0000110";  --3
+					seg2 <= "0000110";  --3
 			WHEN OTHERS => seg1 <= "1111110"; -- --
-								seg2 <= "1111110"; -- --
+					seg2 <= "1111110"; -- --
 		END CASE;
 	END PROCESS;
 
