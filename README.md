@@ -1,3 +1,3 @@
-# traffic-light-controller
+# Traffic Light Controller
 
 Traffic Light Controller at a Junction
