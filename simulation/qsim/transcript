@@ -1,0 +1,36 @@
+# do TrafficSigKL.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:09:51 on Aug 05,2019
+# vlog -work work TrafficSigKL.vo 
+# -- Compiling module TrafficSigKL
+# 
+# Top level modules:
+# 	TrafficSigKL
+# End time: 16:09:51 on Aug 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:09:51 on Aug 05,2019
+# vlog -work work Waveform.vwf.vt 
+# -- Compiling module TrafficSigKL_vlg_sample_tst
+# -- Compiling module TrafficSigKL_vlg_check_tst
+# -- Compiling module TrafficSigKL_vlg_vec_tst
+# 
+# Top level modules:
+# 	TrafficSigKL_vlg_vec_tst
+# End time: 16:09:51 on Aug 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -c -do "TrafficSigKL.do" 
+# Start time: 16:09:51 on Aug 05,2019
+# Loading work.TrafficSigKL_vlg_vec_tst
+# Loading work.TrafficSigKL
+# Loading altera_ver.dffeas
+# Loading work.TrafficSigKL_vlg_sample_tst
+# Loading work.TrafficSigKL_vlg_check_tst
+# Loading altera_ver.PRIM_GDFF_LOW
+# Simulation passed !
+# ** Note: $finish    : Waveform.vwf.vt(1315)
+#    Time: 1 us  Iteration: 0  Instance: /TrafficSigKL_vlg_vec_tst/tb_out
+# End time: 16:09:52 on Aug 05,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0

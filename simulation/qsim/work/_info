@@ -1,0 +1,178 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/!ETEC122 Quartus2/#Project/simulation/qsim
+vTrafficSigKL
+Z1 !s110 1565035791
+!i10b 1
+!s100 MAb>U58k=MOdBT=F@GJO63
+I1mc_]H5i@TmPU_bIWeL602
+Z2 V`JN@9S9cnhjKRR_L]QIcM3
+Z3 dC:/!ETEC122 Quartus2/#Project (Submission)/simulation/qsim
+w1565035790
+Z4 8TrafficSigKL.vo
+Z5 FTrafficSigKL.vo
+Z6 L0 32
+Z7 OV;L;10.3d;59
+r1
+!s85 0
+31
+!s108 1565035791.354000
+Z8 !s107 TrafficSigKL.vo|
+Z9 !s90 -work|work|TrafficSigKL.vo|
+!i113 1
+Z10 o-work work
+n@traffic@sig@k@l
+vTrafficSigKL_ctrl
+Z11 !s110 1564332617
+!i10b 1
+!s100 NOROXc]LSlh_0327U;[8N0
+IgO42@T<L6R<3HkkKEWi8T2
+R2
+R0
+w1564332616
+R4
+R5
+R6
+R7
+r1
+!s85 0
+31
+!s108 1564332617.686000
+R8
+R9
+!i113 1
+R10
+n@traffic@sig@k@l_ctrl
+vTrafficSigKL_ctrl_vlg_check_tst
+R11
+!i10b 1
+!s100 9YO4P50nXh`;bONb0AHe[0
+Ie<UK;BDlL8AIHmbn]6eNO0
+R2
+R0
+Z12 w1564332613
+Z13 8Waveform_ctrl.vwf.vt
+Z14 FWaveform_ctrl.vwf.vt
+L0 62
+R7
+r1
+!s85 0
+31
+Z15 !s108 1564332617.795000
+Z16 !s107 Waveform_ctrl.vwf.vt|
+Z17 !s90 -work|work|Waveform_ctrl.vwf.vt|
+!i113 1
+R10
+n@traffic@sig@k@l_ctrl_vlg_check_tst
+vTrafficSigKL_ctrl_vlg_sample_tst
+R11
+!i10b 1
+!s100 W[hWS7g8onDFK;CjcFc:Q2
+IJ@znP45Okz3MdnRC3_Y:13
+R2
+R0
+R12
+R13
+R14
+Z18 L0 30
+R7
+r1
+!s85 0
+31
+R15
+R16
+R17
+!i113 1
+R10
+n@traffic@sig@k@l_ctrl_vlg_sample_tst
+vTrafficSigKL_ctrl_vlg_vec_tst
+R11
+!i10b 1
+!s100 e_NlFb0o_jTE?JXCMh3dn2
+IP<U]cHFJPD`L=jKCdoaA20
+R2
+R0
+R12
+R13
+R14
+L0 566
+R7
+r1
+!s85 0
+31
+R15
+R16
+R17
+!i113 1
+R10
+n@traffic@sig@k@l_ctrl_vlg_vec_tst
+vTrafficSigKL_vlg_check_tst
+R1
+!i10b 1
+!s100 l7MJ0ai:LVeF<8>_JAiP?2
+I8f@[Ek3gcVnz6]fRm@ffi0
+R2
+R3
+Z19 w1565035786
+Z20 8Waveform.vwf.vt
+Z21 FWaveform.vwf.vt
+L0 70
+R7
+r1
+!s85 0
+31
+Z22 !s108 1565035791.544000
+Z23 !s107 Waveform.vwf.vt|
+Z24 !s90 -work|work|Waveform.vwf.vt|
+!i113 1
+R10
+n@traffic@sig@k@l_vlg_check_tst
+vTrafficSigKL_vlg_sample_tst
+R1
+!i10b 1
+!s100 S_]o49n2hOJj`V_`UiXGk1
+Ilj2z0zIikIQhLehl;TYjX3
+R2
+R3
+R19
+R20
+R21
+R18
+R7
+r1
+!s85 0
+31
+R22
+R23
+R24
+!i113 1
+R10
+n@traffic@sig@k@l_vlg_sample_tst
+vTrafficSigKL_vlg_vec_tst
+R1
+!i10b 1
+!s100 lQcQm?Hec^NgdjY5X?4eR3
+Ieaf@<X3Se6I6mTJRCXh2o0
+R2
+R3
+R19
+R20
+R21
+L0 1319
+R7
+r1
+!s85 0
+31
+R22
+R23
+R24
+!i113 1
+R10
+n@traffic@sig@k@l_vlg_vec_tst
