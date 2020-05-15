@@ -15,8 +15,9 @@ The control system consists of 3 main modules; **`Clock divider`**, **`Timer`**,
 ## 2. Descriptions of the moudles
 ### (1) Clock Divider
 User can make own clock pulses by counting system clock pulses.
-```
-(VHDL code)
+```vhdl
+[VHDL code]
+
 PROCESS(clk, reset) -- Clock Divider : user clock
 	BEGIN
 		IF (reset ='0') THEN
