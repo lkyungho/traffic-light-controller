@@ -1,5 +1,7 @@
 # Traffic Light Controller
-Traffic Light Controller at a Junction
+Traffic lights control system at a Junction
+
+User can control the duration of the red light and the yellow light
 ```
 * Hardware: Altera DE0-CV board
 * Software: VHDL
@@ -7,7 +9,7 @@ Traffic Light Controller at a Junction
 ```
 
 ## 1. Diagram of the System
-The control system consists of 3 main modules; **`Clock divider`**, **`Timer`**, and **`Signal controller`**.
+The control system consists of 3 main modules; **`Clock divider`**, **`Timer`**, and **`Signal controller`**
 
 ![alt text](https://github.com/lkyungho/Images/blob/master/traffic-light-controller-structure.jpg "Structure")
 
@@ -15,6 +17,7 @@ The control system consists of 3 main modules; **`Clock divider`**, **`Timer`**,
 ## 2. Descriptions of the modules
 ### (1) Clock Divider
 User can make own clock pulses by counting system clock pulses with **`prd`**.
+> prd is contant data type, and user can set desired clock pulses by changing values of “prd”
 > User clock frequency = System clock frequency * [1 / 2 x (prd + 1)]
 ```vhdl
 [VHDL code]
