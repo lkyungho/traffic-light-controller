@@ -6,15 +6,16 @@ Traffic Light Controller at a Junction
 * Knowledge: Sequential circuits, Counter, Shift register, Clock divider, FSM (Finite State Machine)
 ```
 
-## 1. Schematic of the System
+## 1. Diagram of the System
 The control system consists of 3 main modules; **`Clock divider`**, **`Timer`**, and **`Signal controller`**.
 
 ![alt text](https://github.com/lkyungho/Images/blob/master/traffic-light-controller-structure.jpg "Structure")
 
 
-## 2. Descriptions of the moudles
+## 2. Descriptions of the modules
 ### (1) Clock Divider
-User can make own clock pulses by counting system clock pulses.
+User can make own clock pulses by counting system clock pulses with **`prd`**.
+> User clock frequency = System clock frequency * [1 / 2 x (prd + 1)]
 ```vhdl
 [VHDL code]
 
