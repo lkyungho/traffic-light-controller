@@ -5,16 +5,16 @@ USE IEEE.STD_LOGIC_UNSIGNED.ALL;
 ENTITY TrafficSigKL IS
 GENERIC (size : INTEGER := 127);
 	PORT (	clk, reset	: IN STD_LOGIC;	-- Clock, Reset
-			timer_en	: IN STD_LOGIC;	-- Timer enable
-			outclk	 	: INOUT STD_LOGIC;	-- User clock
-			timer_ew 	: INOUT INTEGER RANGE 0 TO size;		-- Timer for East-West signal
-			timer_ns 	: INOUT INTEGER RANGE 0 TO size;		-- Timer for North-South signal
-			s_out		: INOUT STD_LOGIC_VECTOR(1 DOWNTO 0); 	-- Status
-			ns_klim, ew_klim : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);	-- Traffic signal
-			seg5, seg4	: OUT STD_LOGIC_VECTOR(0 TO 6);	-- Seven segment for s status
-			seg3, seg2	: OUT STD_LOGIC_VECTOR(0 TO 6);	-- Seven segment for East-West timer
-			seg1, seg0	: OUT STD_LOGIC_VECTOR(0 TO 6)	-- Seven segment for North-South timer
-			);
+		timer_en	: IN STD_LOGIC;	-- Timer enable
+		outclk	 	: INOUT STD_LOGIC;	-- User clock
+		timer_ew 	: INOUT INTEGER RANGE 0 TO size;		-- Timer for East-West signal
+		timer_ns 	: INOUT INTEGER RANGE 0 TO size;		-- Timer for North-South signal
+		s_out		: INOUT STD_LOGIC_VECTOR(1 DOWNTO 0); 	-- Status
+		ns_klim, ew_klim : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);	-- Traffic signal
+		seg5, seg4	: OUT STD_LOGIC_VECTOR(0 TO 6);	-- Seven segment for s status
+		seg3, seg2	: OUT STD_LOGIC_VECTOR(0 TO 6);	-- Seven segment for East-West timer
+		seg1, seg0	: OUT STD_LOGIC_VECTOR(0 TO 6)	-- Seven segment for North-South timer
+		);
 END TrafficSigKL;
 
 
@@ -24,27 +24,27 @@ ARCHITECTURE bhv0 OF TrafficSigKL IS
 	CONSTANT y_light	: INTEGER := 3; 		-- Control Yellow time (3 pulses)
 	CONSTANT r_light	: INTEGER := 10;		-- Control Green + Yellow time (Green is 7 pulses)
 	
-	SIGNAL temp		: STD_LOGIC := '0';
+	SIGNAL temp	: STD_LOGIC := '0';
 	SIGNAL count	: INTEGER := 0;
 	SIGNAL timer1	: INTEGER RANGE 0 TO size := r_light;
 	SIGNAL timer2	: INTEGER RANGE 0 TO size := 0;
-	SIGNAL s		: STD_LOGIC_VECTOR(1 DOWNTO 0) := (OTHERS =>'0');
-	SIGNAL ew		: STD_LOGIC_VECTOR(2 DOWNTO 0) := "001";
-	SIGNAL ns		: STD_LOGIC_VECTOR(2 DOWNTO 0) := "100";
+	SIGNAL s	: STD_LOGIC_VECTOR(1 DOWNTO 0) := (OTHERS =>'0');
+	SIGNAL ew	: STD_LOGIC_VECTOR(2 DOWNTO 0) := "001";
+	SIGNAL ns	: STD_LOGIC_VECTOR(2 DOWNTO 0) := "100";
 	
 	COMPONENT seven_seg1 IS
 	PORT (	s		: IN STD_LOGIC_VECTOR (1 DOWNTO 0);
-			seg1	: OUT STD_LOGIC_VECTOR (0 TO 6);
-			seg2	: OUT STD_LOGIC_VECTOR (0 TO 6)
-			);
+		seg1	: OUT STD_LOGIC_VECTOR (0 TO 6);
+		seg2	: OUT STD_LOGIC_VECTOR (0 TO 6)
+		);
 	END COMPONENT;
 	
 	COMPONENT seven_seg2 IS
 	GENERIC (size : INTEGER);
-	PORT (	t		: IN INTEGER RANGE 0 TO size;
-			seg1	: OUT STD_LOGIC_VECTOR (0 TO 6);
-			seg2	: OUT STD_LOGIC_VECTOR (0 TO 6)
-			);
+	PORT (	t	: IN INTEGER RANGE 0 TO size;
+		seg1	: OUT STD_LOGIC_VECTOR (0 TO 6);
+		seg2	: OUT STD_LOGIC_VECTOR (0 TO 6)
+		);
 	END COMPONENT;
 	
 BEGIN
@@ -63,7 +63,7 @@ BEGIN
 			END IF;
 		END IF;
 	END PROCESS;
-	outclk	  <= temp;
+	outclk <= temp;
 	
 	
 	PROCESS(outclk, reset)	-- Timers : time for green + yellow signal
@@ -89,8 +89,8 @@ BEGIN
 			END IF;
 		END IF;
 	END PROCESS;
-	timer_ew	 <= timer1;  -- Timer for East-West signal
-	timer_ns	 <= timer2;  -- Timer for North-South signal
+	timer_ew <= timer1;  -- Timer for East-West signal
+	timer_ns <= timer2;  -- Timer for North-South signal
 	
 	
 	PROCESS(outclk, reset) -- Output controller (corresponding to state of "s")
@@ -128,7 +128,7 @@ BEGIN
 	END PROCESS;
 	ew_klim	<= ew;
 	ns_klim	<= ns;	
-	s_out		<= s;
+	s_out	<= s;
 	
 	
 	u1 : seven_seg1 PORT MAP(s_out, seg5, seg4); 	-- Seven segment output for s
@@ -144,10 +144,10 @@ LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
 
 ENTITY seven_seg1 IS
-	PORT (	s		: IN STD_LOGIC_VECTOR (1 DOWNTO 0);
-			seg1	: OUT STD_LOGIC_VECTOR (0 TO 6);
-			seg2	: OUT STD_LOGIC_VECTOR (0 TO 6)
-			);
+	PORT (	s	: IN STD_LOGIC_VECTOR (1 DOWNTO 0);
+		seg1	: OUT STD_LOGIC_VECTOR (0 TO 6);
+		seg2	: OUT STD_LOGIC_VECTOR (0 TO 6)
+		);
 END seven_seg1;
 
 ARCHITECTURE bhv1 OF seven_seg1 IS
@@ -178,10 +178,10 @@ USE IEEE.STD_LOGIC_1164.ALL;
 
 ENTITY seven_seg2 IS
 GENERIC (size : INTEGER);
-	PORT (	t		: IN INTEGER RANGE 0 TO size;
-			seg1	: OUT STD_LOGIC_VECTOR (0 TO 6);
-			seg2	: OUT STD_LOGIC_VECTOR (0 TO 6)
-			);
+	PORT (	t	: IN INTEGER RANGE 0 TO size;
+		seg1	: OUT STD_LOGIC_VECTOR (0 TO 6);
+		seg2	: OUT STD_LOGIC_VECTOR (0 TO 6)
+		);
 END seven_seg2;
 
 ARCHITECTURE bhv2 OF seven_seg2 IS
