@@ -17,11 +17,11 @@ The control system consists of 3 main modules; **`Clock divider`**, **`Timer`**,
 ## 2. Descriptions of the modules
 ### (1) Clock Divider
 User can make own clock pulses by dividing system clock pulses by desired values.
-> _**`prd`** is contant data type, and user can set desired clock pulses by changing values of **`prd`**
+> _**`prd`** is contant data type, and user can set desired clock pulses by changing values of **`prd`**_
 >
-> User clock frequency = System clock frequency * [1 / 2 x (prd + 1)]
+> _User clock frequency = System clock frequency * [1 / 2 x (prd + 1)]_
 >
-> (User clock frequency is 1 second for this project)_
+> _(User clock frequency is 1 second for this project)_
 ```vhdl
 [VHDL code]
 
@@ -43,9 +43,9 @@ outclk <= temp;
 ### (2) Timer
 Timer counts GREEN and YELLOW signal time, which is 10 for this project, and counts down from 10 to 0
 
-> _**`r_light`** is contant data type 
+> _**`r_light`** is contant data type_ 
 >
-> User can control GREEN + YELLOW signal time by changing a value of **`r_light`**_
+> _User can control GREEN + YELLOW signal time by changing a value of **`r_light`**_
 ```vhdl
 [VHDL code]
 
@@ -77,17 +77,17 @@ timer_ns <= timer2;  -- Timer for North-South signal
 ```
 ### (3) Signal Controller
 Finite state machine (FSM) is used to determine traffic light operation
-> _S0 state: The initial state is East-West GREEN signal and North-South RED signal
+> _S0 state: The initial state is East-West GREEN signal and North-South RED signal_
 >
-> S1 state: 7 clock pluses, East-West signal switches to YELLOW signal and North-South remains RED signal
+> _S1 state: 7 clock pluses, East-West signal switches to YELLOW signal and North-South remains RED signal_
 >
-> S2 state: East-West signal switchess to RED signal and North-South signal changes to GREEN signal after 3 more pulses
+> _S2 state: East-West signal switchess to RED signal and North-South signal changes to GREEN signal after 3 more pulses_
 >
-> S3 state: After 7 clock pluses, North-South signal switches to YELLOW signal and East-West remains RED signal
+> _S3 state: After 7 clock pluses, North-South signal switches to YELLOW signal and East-West remains RED signal_
 >
-> S0 state: North-South signal switches to RED signal and East-West signal changes to GREEN signal after 3 more pulses
+> _S0 state: North-South signal switches to RED signal and East-West signal changes to GREEN signal after 3 more pulses_
 >
-> ... (The procedure is repeated)_
+> _... (The procedure is repeated)_
 
 
 [State Diagram]
