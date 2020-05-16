@@ -133,6 +133,8 @@ ew_klim	<= ew;
 ns_klim	<= ns;	
 s_out	<= s;
 ```
+
+
 ## 3. Result
 > _S0 state: East-West signal is GREEN (“001”), and North-South signal is RED (“100”)_
 
