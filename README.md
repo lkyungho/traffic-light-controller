@@ -21,7 +21,7 @@ User can make own clock pulses by dividing system clock pulses by desired values
 >
 > _User clock frequency is 1 second for this project._
 >
-> 	_User clock frequency = System clock frequency * {1 / [2 x (prd + 1)]}_
+> _	User clock frequency = System clock frequency * {1 / [2 x (prd + 1)]}_
 ```vhdl
 [VHDL code]
 
