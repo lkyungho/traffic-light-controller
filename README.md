@@ -8,13 +8,13 @@ User can control the duration of the green light and the yellow light.
 * Knowledge: Sequential circuits, Counter, Shift register, Clock divider, FSM (Finite State Machine)
 ```
 
-## 1. Diagram of the System
+## _1. Diagram of the System_
 The control system consists of 3 main modules; **`Clock divider`**, **`Timer`**, and **`Signal controller`**.
 
 ![alt text](https://github.com/lkyungho/Images/blob/master/traffic-light-controller-structure.jpg "Structure")
 
 
-## 2. Descriptions of the modules
+## _2. Descriptions of the modules_
 ### (1) Clock Divider
 User can make own clock pulses by dividing system clock pulses by desired values.
 > _**`prd`** is contant data type, and user can set desired clock pulses by changing values of **`prd`**_.
@@ -106,12 +106,12 @@ BEGIN
 		CASE s IS
 			WHEN "00" =>
 				IF(timer_ew = y_light + 1) THEN
-					s	<= s + 1;
+					s  <= s + 1;
 					ew <= ew(1 DOWNTO 0) & ew(2); -- "EW changes to YELLOW", NS remains RED
 				END IF;
 			WHEN "01" =>
 				IF(timer_ew = 1) THEN
-					s	<= s + 1;
+					s  <= s + 1;
 					ew <= ew(1 DOWNTO 0) & ew(2); -- "EW changes to RED"
 					ns <= ns(1 DOWNTO 0) & ns(2); -- "NS changes to GREEN"						
 				END IF;
@@ -122,7 +122,7 @@ BEGIN
 				END IF;
 			WHEN "11" =>
 				IF(timer_ns = 1) THEN
-					s	<= s + 1;
+					s  <= s + 1;
 					ew <= ew(1 DOWNTO 0) & ew(2); -- "EW changes to GREEN"
 					ns <= ns(1 DOWNTO 0) & ns(2); -- "NS changes to RED"						
 				END IF;
@@ -135,7 +135,7 @@ s_out	<= s;
 ```
 
 
-## 3. Result
+## _3. Result_
 > _S0 state: East-West signal is GREEN (“001”), and North-South signal is RED (“100”)_
 ![alt text](https://github.com/lkyungho/Images/blob/master/traffic-light-controller-result-s0.jpg "S0 State")
 
