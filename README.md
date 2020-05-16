@@ -1,5 +1,5 @@
 # Traffic Light Controller
-Traffic lights control system at a Junction.
+Traffic light control system at a Junction.
 
 ```
 * Hardware: Altera DE0-CV board (FPGA)
