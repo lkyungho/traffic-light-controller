@@ -76,10 +76,15 @@ timer_ns <= timer2;  -- Timer for North-South signal
 ### (3) Signal Controller
 Finite state machine (FSM) is used to determine traffic light operation
 > S0 state: The initial state is East-West GREEN signal and North-South RED signal
+>
 > S1 state: 7 clock pluses, East-West signal switches to YELLOW signal and North-South remains RED signal
+>
 > S2 state: East-West signal switchess to RED signal and North-South signal changes to GREEN signal after 3 more pulses
+>
 > S3 state: After 7 clock pluses, North-South signal switches to YELLOW signal and East-West remains RED signal
+>
 > S0 state: North-South signal switchess to RED signal and East-West signal changes to GREEN signal after 3 more pulses
+>
 > ... (The procedure is repeated)
 
 ![alt text](https://github.com/lkyungho/Images/blob/master/traffic-light-controller-state.jpg "State")
