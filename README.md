@@ -19,9 +19,9 @@ The control system consists of 3 main modules; **`Clock divider`**, **`Timer`**,
 User can make own clock pulses by dividing system clock pulses by desired values.
 > _**`prd`** is contant data type, and user can set desired clock pulses by changing values of **`prd`**_.
 >
-> _User clock frequency = System clock frequency * {1 / [2 x (prd + 1)]}_
->
 > _User clock frequency is 1 second for this project._
+>
+> 	_User clock frequency = System clock frequency * {1 / [2 x (prd + 1)]}_
 ```vhdl
 [VHDL code]
 
