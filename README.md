@@ -73,3 +73,4 @@ END PROCESS;
 timer_ew <= timer1;  -- Timer for East-West signal
 timer_ns <= timer2;  -- Timer for North-South signal
 ```
+### (3) Signal Controller
