@@ -23,7 +23,7 @@ User can make own clock pulses by dividing system clock pulses by desired values
 >
 > (User clock frequency is 1 second for this project)
 ```vhdl
-[VHDL code]
+_[VHDL code]
 
 PROCESS(clk, reset) -- Clock Divider : user clock
 BEGIN
@@ -38,7 +38,7 @@ BEGIN
 		END IF;
 	END IF;
 END PROCESS;
-outclk <= temp;
+outclk <= temp;_
 ```
 ### (2) Timer
 Timer counts GREEN and YELLOW signal time, which is 10 for this project, and counts down from 10 to 0
