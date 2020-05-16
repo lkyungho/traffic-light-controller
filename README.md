@@ -1,7 +1,7 @@
 # Traffic Light Controller
-Traffic lights control system at a Junction
+Traffic lights control system at a Junction.
 
-User can control the duration of the green light and the yellow light
+User can control the duration of the green light and the yellow light.
 ```
 * Hardware: Altera DE0-CV board
 * Software: VHDL
@@ -9,7 +9,7 @@ User can control the duration of the green light and the yellow light
 ```
 
 ## 1. Diagram of the System
-The control system consists of 3 main modules; **`Clock divider`**, **`Timer`**, and **`Signal controller`**
+The control system consists of 3 main modules; **`Clock divider`**, **`Timer`**, and **`Signal controller`**.
 
 ![alt text](https://github.com/lkyungho/Images/blob/master/traffic-light-controller-structure.jpg "Structure")
 
@@ -17,11 +17,11 @@ The control system consists of 3 main modules; **`Clock divider`**, **`Timer`**,
 ## 2. Descriptions of the modules
 ### (1) Clock Divider
 User can make own clock pulses by dividing system clock pulses by desired values.
-> _**`prd`** is contant data type, and user can set desired clock pulses by changing values of **`prd`**_
+> _**`prd`** is contant data type, and user can set desired clock pulses by changing values of **`prd`**_.
 >
 > _User clock frequency = System clock frequency * [1 / 2 x (prd + 1)]_
 >
-> _(User clock frequency is 1 second for this project)_
+> _User clock frequency is 1 second for this project._
 ```vhdl
 [VHDL code]
 
@@ -41,11 +41,11 @@ END PROCESS;
 outclk <= temp;
 ```
 ### (2) Timer
-Timer counts GREEN and YELLOW signal time, which is 10 for this project, and counts down from 10 to 0
+Timer counts GREEN and YELLOW signal time, which is 10 for this project, and counts down from 10 to 0.
 
-> _**`r_light`** is contant data type_ 
+> _**`r_light`** is contant data type_.
 >
-> _User can control GREEN + YELLOW signal time by changing a value of **`r_light`**_
+> _User can control GREEN + YELLOW signal time by changing a value of **`r_light`**_.
 ```vhdl
 [VHDL code]
 
@@ -76,16 +76,16 @@ timer_ew <= timer1;  -- Timer for East-West signal
 timer_ns <= timer2;  -- Timer for North-South signal
 ```
 ### (3) Signal Controller
-Finite state machine (FSM) is used to determine traffic light operation
-> _S0 state: The initial state is East-West GREEN signal and North-South RED signal_
+Finite state machine (FSM) is used to determine traffic light signal operation.
+> _S0 state: East-West GREEN signal and North-South RED signal. (Duration: 7 clocks)_
 >
-> _S1 state: 7 clock pluses, East-West signal switches to YELLOW signal and North-South remains RED signal_
+> _S1 state: East-West signal switches to YELLOW signal and North-South remains RED signal. (Duration: 3 clocks)_
 >
-> _S2 state: East-West signal switchess to RED signal and North-South signal changes to GREEN signal after 3 more pulses_
+> _S2 state: East-West signal switches to RED signal and North-South signal changes to GREEN signal. (Duration: 7 clocks)_
 >
-> _S3 state: After 7 clock pluses, North-South signal switches to YELLOW signal and East-West remains RED signal_
+> _S3 state: East-West remains RED signal and North-South signal switches to YELLOW signal. (Duration: 3 clocks)_
 >
-> _S0 state: North-South signal switches to RED signal and East-West signal changes to GREEN signal after 3 more pulses_
+> _S0 state: East-West signal changes to GREEN signal and North-South signal switches to RED signal._
 >
 > _... (The procedure is repeated)_
 
