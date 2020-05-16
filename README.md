@@ -83,8 +83,47 @@ Finite state machine (FSM) is used to determine traffic light operation
 >
 > S3 state: After 7 clock pluses, North-South signal switches to YELLOW signal and East-West remains RED signal
 >
-> S0 state: North-South signal switchess to RED signal and East-West signal changes to GREEN signal after 3 more pulses
+> S0 state: North-South signal switches to RED signal and East-West signal changes to GREEN signal after 3 more pulses
 >
 > ... (The procedure is repeated)
 
 ![alt text](https://github.com/lkyungho/Images/blob/master/traffic-light-controller-state.jpg "State")
+```vhdl
+[VHDL code]
+PROCESS(outclk, reset) -- Output controller (corresponding to state of "s")
+BEGIN
+	IF(reset = '0') THEN
+		s	<= (OTHERS =>'0');
+		ew <= "001"; 	-- EW GREEN
+		ns <= "100"; 	-- NS RED			
+	ELSIF(RISING_EDGE(outclk)) THEN
+		CASE s IS
+			WHEN "00" =>
+				IF(timer_ew = y_light + 1) THEN
+					s	<= s + 1;
+					ew <= ew(1 DOWNTO 0) & ew(2); -- "EW changes to YELLOW", NS remains RED
+				END IF;
+			WHEN "01" =>
+				IF(timer_ew = 1) THEN
+					s	<= s + 1;
+					ew <= ew(1 DOWNTO 0) & ew(2); -- "EW changes to RED"
+					ns <= ns(1 DOWNTO 0) & ns(2); -- "NS changes to GREEN"						
+				END IF;
+			WHEN "10" =>
+				IF(timer_ns = y_light + 1) THEN
+					s	<= s + 1;
+					ns <= ns(1 DOWNTO 0) & ns(2); -- "NS changes to YELLOW", EW remains RED
+				END IF;
+			WHEN "11" =>
+				IF(timer_ns = 1) THEN
+					s	<= s + 1;
+					ew <= ew(1 DOWNTO 0) & ew(2); -- "EW changes to GREEN"
+					ns <= ns(1 DOWNTO 0) & ns(2); -- "NS changes to RED"						
+				END IF;
+		END CASE;	
+	END IF;
+END PROCESS;
+ew_klim	<= ew;
+ns_klim	<= ns;	
+s_out	<= s;
+```
