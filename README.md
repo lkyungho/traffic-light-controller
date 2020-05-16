@@ -1,11 +1,12 @@
 # Traffic Light Controller
 Traffic lights control system at a Junction.
 
-User can control the duration of the green light and the yellow light.
 ```
 * Hardware: Altera DE0-CV board
 * Software: VHDL
 ```
+
+![alt text](https://github.com/lkyungho/Images/blob/master/traffic-light-controller-junction.jpg "Traffic signal")
 
 ## _1. Diagram of the System_
 The control system consists of 3 main modules; **`Clock divider`**, **`Timer`**, and **`Signal controller`**.
