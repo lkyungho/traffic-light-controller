@@ -89,6 +89,9 @@ Finite state machine (FSM) is used to determine traffic light operation
 >
 > ... (The procedure is repeated)
 
+
+[State Diagram]
+
 ![alt text](https://github.com/lkyungho/Images/blob/master/traffic-light-controller-state.jpg "State")
 ```vhdl
 [VHDL code]
