@@ -17,7 +17,7 @@ The control system consists of 3 main modules; **`Clock divider`**, **`Timer`**,
 ## _2. Descriptions of the modules_
 ### (1) Clock Divider
 User can make own clock pulses by dividing system clock pulses by desired values.
-> _**`prd`** is contant data type, and user can set desired clock pulses by changing values of **`prd`**_.
+> _**`prd`** is constant data type, and user can set desired clock pulses by changing values of **`prd`**_.
 >
 > _User clock frequency is 1 second for this project._
 >
@@ -43,7 +43,7 @@ outclk <= temp;
 ### (2) Timer
 Timer counts GREEN and YELLOW signal time, which is 10 for this project, and counts down from 10 to 0.
 
-> _**`r_light`** is contant data type_.
+> _**`r_light`** is constant data type_.
 >
 > _User can control GREEN + YELLOW signal time by changing a value of **`r_light`**_.
 ```vhdl
