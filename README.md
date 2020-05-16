@@ -117,7 +117,7 @@ BEGIN
 				END IF;
 			WHEN "10" =>
 				IF(timer_ns = y_light + 1) THEN
-					s	<= s + 1;
+					s  <= s + 1;
 					ns <= ns(1 DOWNTO 0) & ns(2); -- "NS changes to YELLOW", EW remains RED
 				END IF;
 			WHEN "11" =>
