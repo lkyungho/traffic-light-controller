@@ -17,7 +17,7 @@ The control system consists of 3 main modules; **`Clock divider`**, **`Timer`**,
 ## 2. Descriptions of the modules
 ### (1) Clock Divider
 User can make own clock pulses by dividing system clock pulses by desired values.
-> **`prd`** is contant data type, and user can set desired clock pulses by changing values of “prd”
+> **`prd`** is contant data type, and user can set desired clock pulses by changing values of **`prd`**
 >
 > User clock frequency = System clock frequency * [1 / 2 x (prd + 1)]
 ```vhdl
@@ -43,7 +43,7 @@ Timer counts GREEN and YELLOW signal time, which is 10 for this project, and cou
 
 > **`r_light`** is contant data type 
 >
-> User can control GREEN + YELLOW signal time by changing a value of r_light
+> User can control GREEN + YELLOW signal time by changing a value of **`r_light`**
 ```vhdl
 [VHDL code]
 
@@ -74,3 +74,12 @@ timer_ew <= timer1;  -- Timer for East-West signal
 timer_ns <= timer2;  -- Timer for North-South signal
 ```
 ### (3) Signal Controller
+Finite state machine (FSM) is used to determine traffic light operation
+> S0 state: The initial state is East-West GREEN signal and North-South RED signal
+> S1 state: 7 clock pluses, East-West signal switches to YELLOW signal and North-South remains RED signal
+> S2 state: East-West signal switchess to RED signal and North-South signal changes to GREEN signal after 3 more pulses
+> S3 state: After 7 clock pluses, North-South signal switches to YELLOW signal and East-West remains RED signal
+> S0 state: North-South signal switchess to RED signal and East-West signal changes to GREEN signal after 3 more pulses
+> ... (The procedure is repeated)
+
+![alt text](https://github.com/lkyungho/Images/blob/master/traffic-light-controller-state.jpg "State")
