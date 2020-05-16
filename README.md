@@ -20,6 +20,8 @@ User can make own clock pulses by dividing system clock pulses by desired values
 > **`prd`** is contant data type, and user can set desired clock pulses by changing values of **`prd`**
 >
 > User clock frequency = System clock frequency * [1 / 2 x (prd + 1)]
+>
+> (User clock frequency is 1 second for this project)
 ```vhdl
 [VHDL code]
 
@@ -90,6 +92,7 @@ Finite state machine (FSM) is used to determine traffic light operation
 ![alt text](https://github.com/lkyungho/Images/blob/master/traffic-light-controller-state.jpg "State")
 ```vhdl
 [VHDL code]
+
 PROCESS(outclk, reset) -- Output controller (corresponding to state of "s")
 BEGIN
 	IF(reset = '0') THEN
@@ -127,3 +130,18 @@ ew_klim	<= ew;
 ns_klim	<= ns;	
 s_out	<= s;
 ```
+## 3. Result
+> S0 state: East-West signal is GREEN (“001”), and North-South signal is RED (“100”)
+![alt text](https://github.com/lkyungho/Images/blob/master/traffic-light-controller-result-s0.jpg "State")
+
+
+> S1 state: East-West signal is YELLOW (“010”), and North-South signal is RED (“100”)
+![alt text](https://github.com/lkyungho/Images/blob/master/traffic-light-controller-result-s1.jpg "State")
+
+
+> S2 state: East-West signal is RED (“100”), and North-South signal is GREEN (“001”)
+![alt text](https://github.com/lkyungho/Images/blob/master/traffic-light-controller-result-s2.jpg "State")
+
+
+> S3 state: East-West signal is RED (“100”), and North-South signal is YELLOW (“010”)
+![alt text](https://github.com/lkyungho/Images/blob/master/traffic-light-controller-result-s3.jpg "State")
