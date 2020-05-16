@@ -17,13 +17,13 @@ The control system consists of 3 main modules; **`Clock divider`**, **`Timer`**,
 ## 2. Descriptions of the modules
 ### (1) Clock Divider
 User can make own clock pulses by dividing system clock pulses by desired values.
-> **`prd`** is contant data type, and user can set desired clock pulses by changing values of **`prd`**
+_> **`prd`** is contant data type, and user can set desired clock pulses by changing values of **`prd`**
 >
 > User clock frequency = System clock frequency * [1 / 2 x (prd + 1)]
 >
-> (User clock frequency is 1 second for this project)
+> (User clock frequency is 1 second for this project)_
 ```vhdl
-_[VHDL code]
+[VHDL code]
 
 PROCESS(clk, reset) -- Clock Divider : user clock
 BEGIN
@@ -38,14 +38,14 @@ BEGIN
 		END IF;
 	END IF;
 END PROCESS;
-outclk <= temp;_
+outclk <= temp;
 ```
 ### (2) Timer
 Timer counts GREEN and YELLOW signal time, which is 10 for this project, and counts down from 10 to 0
 
-> **`r_light`** is contant data type 
+_> **`r_light`** is contant data type 
 >
-> User can control GREEN + YELLOW signal time by changing a value of **`r_light`**
+> User can control GREEN + YELLOW signal time by changing a value of **`r_light`**_
 ```vhdl
 [VHDL code]
 
@@ -77,7 +77,7 @@ timer_ns <= timer2;  -- Timer for North-South signal
 ```
 ### (3) Signal Controller
 Finite state machine (FSM) is used to determine traffic light operation
-> S0 state: The initial state is East-West GREEN signal and North-South RED signal
+_> S0 state: The initial state is East-West GREEN signal and North-South RED signal
 >
 > S1 state: 7 clock pluses, East-West signal switches to YELLOW signal and North-South remains RED signal
 >
@@ -87,7 +87,7 @@ Finite state machine (FSM) is used to determine traffic light operation
 >
 > S0 state: North-South signal switches to RED signal and East-West signal changes to GREEN signal after 3 more pulses
 >
-> ... (The procedure is repeated)
+> ... (The procedure is repeated)_
 
 
 [State Diagram]
@@ -134,21 +134,21 @@ ns_klim	<= ns;
 s_out	<= s;
 ```
 ## 3. Result
-> S0 state: East-West signal is GREEN (“001”), and North-South signal is RED (“100”)
+_> S0 state: East-West signal is GREEN (“001”), and North-South signal is RED (“100”)
 
 ![alt text](https://github.com/lkyungho/Images/blob/master/traffic-light-controller-result-s0.jpg "S0 State")
 
 
-> S1 state: East-West signal is YELLOW (“010”), and North-South signal is RED (“100”)
+_> S1 state: East-West signal is YELLOW (“010”), and North-South signal is RED (“100”)
 
 ![alt text](https://github.com/lkyungho/Images/blob/master/traffic-light-controller-result-s1.jpg "S1 State")
 
 
-> S2 state: East-West signal is RED (“100”), and North-South signal is GREEN (“001”)
+_> S2 state: East-West signal is RED (“100”), and North-South signal is GREEN (“001”)
 
 ![alt text](https://github.com/lkyungho/Images/blob/master/traffic-light-controller-result-s2.jpg "S2 State")
 
 
-> S3 state: East-West signal is RED (“100”), and North-South signal is YELLOW (“010”)
+_> S3 state: East-West signal is RED (“100”), and North-South signal is YELLOW (“010”)
 
 ![alt text](https://github.com/lkyungho/Images/blob/master/traffic-light-controller-result-s3.jpg "S3 State")
