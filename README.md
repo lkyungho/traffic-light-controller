@@ -2,7 +2,7 @@
 Traffic lights control system at a Junction.
 
 ```
-* Hardware: Altera DE0-CV board
+* Hardware: Altera DE0-CV board (FPGA)
 * Software: VHDL
 ```
 
