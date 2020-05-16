@@ -5,7 +5,6 @@ User can control the duration of the green light and the yellow light.
 ```
 * Hardware: Altera DE0-CV board
 * Software: VHDL
-* Knowledge: Sequential circuits, Counter, Shift register, Clock divider, FSM (Finite State Machine)
 ```
 
 ## _1. Diagram of the System_
