@@ -46,7 +46,7 @@ and counts down from 10 to 0
 > r_light is contant data type 
 >
 > User can control GREEN + YELLOW signal time by changing a value of r_light
-```
+```vhdl
 [VHDL code]
 
 PROCESS(outclk, reset)	-- Timers : time for green + yellow signal
