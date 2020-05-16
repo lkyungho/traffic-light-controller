@@ -20,7 +20,7 @@ END TrafficSigKL;
 
 ARCHITECTURE bhv0 OF TrafficSigKL IS
 
-	CONSTANT prd		: INTEGER := 24999999;	-- Control user clock pulses (user clock = system clock * (1/(prd+1))
+	CONSTANT prd		: INTEGER := 24999999;	-- Control user clock freq (user clock freq = system clock freq / (2*(prd+1)))
 	CONSTANT y_light	: INTEGER := 3;		-- Control Yellow time (3 pulses)
 	CONSTANT r_light	: INTEGER := 10;	-- Control Green + Yellow time (Green is 7 pulses)
 	
