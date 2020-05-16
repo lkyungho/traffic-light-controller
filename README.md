@@ -132,16 +132,20 @@ s_out	<= s;
 ```
 ## 3. Result
 > S0 state: East-West signal is GREEN (“001”), and North-South signal is RED (“100”)
-![alt text](https://github.com/lkyungho/Images/blob/master/traffic-light-controller-result-s0.jpg "State")
+
+![alt text](https://github.com/lkyungho/Images/blob/master/traffic-light-controller-result-s0.jpg "S0 State")
 
 
 > S1 state: East-West signal is YELLOW (“010”), and North-South signal is RED (“100”)
-![alt text](https://github.com/lkyungho/Images/blob/master/traffic-light-controller-result-s1.jpg "State")
+
+![alt text](https://github.com/lkyungho/Images/blob/master/traffic-light-controller-result-s1.jpg "S1 State")
 
 
 > S2 state: East-West signal is RED (“100”), and North-South signal is GREEN (“001”)
-![alt text](https://github.com/lkyungho/Images/blob/master/traffic-light-controller-result-s2.jpg "State")
+
+![alt text](https://github.com/lkyungho/Images/blob/master/traffic-light-controller-result-s2.jpg "S2 State")
 
 
 > S3 state: East-West signal is RED (“100”), and North-South signal is YELLOW (“010”)
-![alt text](https://github.com/lkyungho/Images/blob/master/traffic-light-controller-result-s3.jpg "State")
+
+![alt text](https://github.com/lkyungho/Images/blob/master/traffic-light-controller-result-s3.jpg "S3 State")
