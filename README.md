@@ -99,7 +99,7 @@ Finite state machine (FSM) is used to determine traffic light signal operation.
 PROCESS(outclk, reset) -- Output controller (corresponding to state of "s")
 BEGIN
 	IF(reset = '0') THEN
-		s	<= (OTHERS =>'0');
+		s  <= (OTHERS =>'0');
 		ew <= "001"; 	-- EW GREEN
 		ns <= "100"; 	-- NS RED			
 	ELSIF(RISING_EDGE(outclk)) THEN
